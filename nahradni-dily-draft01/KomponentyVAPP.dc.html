@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400..700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:#F7F9FB;}
+  a{color:#1E5AA8;} a:hover{color:#1A4A8A;}
+  @keyframes vapp-led{0%{box-shadow:0 0 0 0 var(--led);}70%{box-shadow:0 0 0 7px transparent;}100%{box-shadow:0 0 0 0 transparent;}}
+  .vapp-led{border-radius:999px;animation:vapp-led 1.8s ease-out infinite;}
+  .btn-solid{transition:background .12s,transform .06s;} .btn-solid:hover{background:#1A4A8A !important;} .btn-solid:active{transform:translateY(1px);}
+  .btn-ghost{transition:background .12s;} .btn-ghost:hover{background:#EFF4FB !important;} .btn-ghost:active{background:#D8E6F6 !important;}
+  .btn-text:hover{text-decoration-thickness:2px;}
+  [class^="btn-t-"]{transition:background .12s,transform .06s;} [class^="btn-t-"]:active{transform:translateY(1px);}
+  .btn-t-buy:hover{background:#0B6937 !important;}
+  .btn-t-primary:hover{background:#1A4A8A !important;}
+  .btn-t-secondary:hover{background:#D8E6F6 !important;}
+  .btn-t-danger:hover{background:#A21B22 !important;}
+  .h-card{transition:box-shadow .15s;} .h-card:hover{box-shadow:0 6px 20px rgba(20,47,86,.10) !important;}
+  .h-buy{transition:background .12s;} .h-buy:hover{background:#0B6937 !important;}
+  .h-primary{transition:background .12s;} .h-primary:hover{background:#1A4A8A !important;}
+  .h-secondary{transition:background .12s;} .h-secondary:hover{background:#D8E6F6 !important;}
+  .h-danger{transition:background .12s;} .h-danger:hover{background:#A21B22 !important;}
+  .h-tab:hover{color:#1E5AA8 !important;}
+  .h-link:hover{color:#1E5AA8 !important;text-decoration:underline;}
+  .h-flink:hover{color:#fff !important;}
+  .h-bchip{transition:box-shadow .12s;} .h-bchip:hover{box-shadow:inset 0 0 0 1.5px #84AEDF !important;}
+  .h-row:hover{background:#F2F4F7 !important;}
+  .h-social{transition:color .12s,border-color .12s;} .h-social:hover{color:#fff !important;border-color:#fff !important;}
+  .h-dark{transition:background .12s;} .h-dark:hover{background:rgba(255,255,255,.2) !important;}
+</style>
+<style>
+.hvx1{transition:background .12s;} .hvx1:hover{background:#1A4A8A !important;}
+.hvx2{transition:background .12s;} .hvx2:hover{background:#F2F4F7 !important;}
+.hvx3{transition:box-shadow .12s;} .hvx3:hover{box-shadow:inset 0 0 0 1.5px #84AEDF !important;}
+.hvx4{transition:background .12s;} .hvx4:hover{background:#D8E6F6 !important;}
+.hvx5{transition:box-shadow .12s;} .hvx5:hover{box-shadow:0 6px 20px rgba(20,47,86,.10) !important;}
+.hvx6{transition:color .12s,text-decoration .12s;} .hvx6:hover{color:#1E5AA8 !important;text-decoration:underline !important;}
+.hvx7{transition:background .12s;} .hvx7:hover{background:#A21B22 !important;}
+.hvx8{transition:color .12s;} .hvx8:hover{color:#fff !important;}
+.hvx9{transition:background .12s;} .hvx9:hover{background:rgba(255,255,255,.2) !important;}
+.hvx10{transition:color .12s,border-color .12s;} .hvx10:hover{color:#fff !important;border-color:#fff !important;}
+</style>
+</helmet>
+<div data-screen-label="Komponenty VAPP" style="font-family:'Exo 2','Helvetica Neue',Arial,sans-serif;color:#15181C;background:#F7F9FB;min-height:100vh;padding:56px 32px 120px;">
+  <div style="max-width:1560px;margin:0 auto;display:flex;flex-direction:column;gap:56px;">
+
+    <div>
+      <img src="./vapp-logo.svg" alt="VAPP" style="height:36px;display:block;margin-bottom:20px;">
+      <h1 style="margin:0;font-size:36px;font-weight:700;letter-spacing:-0.02em;">Komponenty</h1>
+      <p style="margin:10px 0 0;font-size:18px;line-height:1.6;color:#5A626C;max-width:760px;">Jediný zdroj UI prvků, ze kterých se skládá celý web. Každou komponentu ladíme tady a propisuje se do všech návrhových stránek. Základy (barvy, typografie) žijí v <a href="./DesignSystemVAPP.dc.html" style="text-decoration:underline;">Design systému</a>.</p>
+    </div>
+
+    <!-- PRODUKTOVÁ KARTA -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <h2 style="margin:0 0 4px;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Produktová karta</h2>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#5A626C;max-width:760px;">Zdroj: <span style="font-family:'JetBrains Mono',monospace;font-size:13px;">Produktová karta VAPP.dc.html</span>. Importuje se přes <span style="font-family:'JetBrains Mono',monospace;font-size:13px;">dc-import</span>. Uprav soubor a změna se projeví všude.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;">
+        <sc-for list="{{ cards }}" as="c" hint-placeholder-count="4">
+          <dc-import name="ProduktovaKarta" p="{{ c }}" hint-size="100%,470px"></dc-import>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- TLAČÍTKA -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <h2 style="margin:0 0 4px;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Tlačítka</h2>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#5A626C;max-width:760px;">Zelená výhradně konverzi (Koupit), modrá ostatním akcím, červená akce a slevy. Ikony 24×24.</p>
+      </div>
+      <div style="background:#fff;border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:28px;">
+        <div>
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8A919C;margin-bottom:14px;">Typy</div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+            <span class="btn-t-buy" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 22px;font-size:15px;font-weight:700;color:#fff;background:#0E7F43;border-radius:8px;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"></circle><circle cx="19" cy="21" r="1.5"></circle><path d="M2 3h3l2.6 12.5a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21.5 7H6"></path></svg>Koupit</span>
+            <span class="btn-t-primary" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;font-size:15px;font-weight:700;color:#fff;background:#1E5AA8;border-radius:8px;cursor:pointer;">Primární akce</span>
+            <span class="btn-t-secondary" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;font-size:15px;font-weight:700;color:#1E5AA8;background:#EFF4FB;border-radius:8px;cursor:pointer;">Sekundární</span>
+            <span class="btn-t-danger" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;font-size:15px;font-weight:700;color:#fff;background:#C5232B;border-radius:8px;cursor:pointer;">Akce a slevy</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;font-size:15px;font-weight:700;color:#9AA1AB;background:#F2F4F7;border-radius:8px;cursor:not-allowed;">Disabled</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8A919C;margin-bottom:14px;">Varianty × velikosti — Standard 36 / Medium 44 / Large 52</div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <sc-for list="{{ btnSizes }}" as="b" hint-placeholder-count="3">
+              <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+                <span style="flex:none;width:80px;font-size:13px;font-weight:700;color:#8A919C;">{{ b.label }}</span>
+                <span class="btn-solid" style="{{ b.leadStyle }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"></circle><circle cx="19" cy="21" r="1.5"></circle><path d="M2 3h3l2.6 12.5a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21.5 7H6"></path></svg>Leading icon</span>
+                <span class="btn-solid" style="{{ b.trailStyle }}">Trailing icon<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+                <span class="btn-solid" style="{{ b.iconStyle }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"></circle><circle cx="19" cy="21" r="1.5"></circle><path d="M2 3h3l2.6 12.5a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21.5 7H6"></path></svg></span>
+                <span class="btn-ghost" style="{{ b.ghostStyle }}">Ghost</span>
+                <span class="btn-text" style="{{ b.textStyle }}">Text</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KVANTIFIKÁTOR -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Kvantifikátor</h2>
+      <div style="background:#fff;border-radius:8px;padding:28px;display:flex;gap:36px;flex-wrap:wrap;align-items:center;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="display:flex;align-items:stretch;height:44px;border-radius:6px;overflow:hidden;background:#F2F4F7;">
+            <span style="width:36px;display:flex;align-items:center;justify-content:center;font-size:17px;color:#5A626C;cursor:pointer;user-select:none;">−</span>
+            <span style="min-width:34px;padding:0 6px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;background:#fff;border-top:1px solid #F2F4F7;border-bottom:1px solid #F2F4F7;">1</span>
+            <span style="width:36px;display:flex;align-items:center;justify-content:center;font-size:17px;color:#5A626C;cursor:pointer;user-select:none;">+</span>
+          </div>
+          <span style="font-size:13px;color:#8A919C;">Standard · 44 px — karta, detail</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="display:flex;align-items:stretch;height:36px;border-radius:6px;overflow:hidden;background:#F2F4F7;">
+            <span style="width:30px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#5A626C;cursor:pointer;user-select:none;">−</span>
+            <span style="min-width:28px;padding:0 6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;background:#fff;border-top:1px solid #F2F4F7;border-bottom:1px solid #F2F4F7;">1</span>
+            <span style="width:30px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#5A626C;cursor:pointer;user-select:none;">+</span>
+          </div>
+          <span style="font-size:13px;color:#8A919C;">Compact · 36 px — košík, seznamy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- VYHLEDÁVÁNÍ S NAŠEPTÁVÁNÍM -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <h2 style="margin:0 0 4px;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Vyhledávání s našeptáváním</h2>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#5A626C;max-width:760px;">Fulltext s okamžitým našeptáváním kategorií a produktů. Pole se roztáhne na plnou šířku, dropdown má hit-areas min. 44&nbsp;px pro mobil. Našeptávání je zobrazené trvale pro náhled — na webu se otevře po kliknutí do pole. Zkuste psát „brzd", „kolo", „led".</p>
+      </div>
+      <div style="background:#fff;border-radius:8px;padding:28px;min-height:420px;">
+        <div style="position:relative;max-width:560px;">
+          <div style="display:flex;align-items:center;height:48px;border-radius:8px;overflow:hidden;background:#F2F4F7;box-shadow:{{ searchRing }};transition:box-shadow .15s;">
+            <span style="width:48px;display:flex;align-items:center;justify-content:center;color:#8A919C;flex:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></span>
+            <input value="{{ q }}" onInput="{{ onSearch }}" onFocus="{{ onFocus }}" onBlur="{{ onBlur }}" placeholder="Hledat díly podle názvu, čísla nebo modelu…" style="flex:1;min-width:0;border:none;outline:none;background:transparent;font-size:15px;font-family:inherit;color:#15181C;padding:0 8px;">
+            <sc-if value="{{ hasQ }}" hint-placeholder-val=""><span onMouseDown="{{ clearSearch }}" style="width:44px;display:flex;align-items:center;justify-content:center;color:#8A919C;cursor:pointer;flex:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></span></sc-if>
+            <span style="width:56px;height:100%;background:#1E5AA8;display:flex;align-items:center;justify-content:center;color:#fff;flex:none;cursor:pointer;" class="hvx1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></span>
+          </div>
+          <sc-if value="{{ showSuggest }}" hint-placeholder-val="">
+            <div style="position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border-radius:8px;box-shadow:0 10px 30px rgba(20,30,45,.14);overflow:hidden;z-index:20;">
+              <div style="padding:10px 16px 6px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#8A919C;">{{ suggestHeading }}</div>
+              <sc-for list="{{ suggestions }}" as="sg" hint-placeholder-count="4">
+                <div onMouseDown="{{ sg.onPick }}" style="display:flex;align-items:center;gap:12px;min-height:52px;padding:6px 16px;cursor:pointer;" class="hvx2">
+                  <span style="{{ sg.thumb }}"></span>
+                  <span style="flex:1;min-width:0;">
+                    <span style="display:block;font-size:15px;font-weight:600;color:#15181C;line-height:1.3;">{{ sg.name }}</span>
+                    <span style="display:block;font-size:13px;color:#8A919C;">{{ sg.meta }}</span>
+                  </span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B4CEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg>
+                </div>
+              </sc-for>
+              <sc-if value="{{ noResults }}" hint-placeholder-val=""><div style="padding:16px;font-size:14px;color:#8A919C;">Nic nenalezeno — zkuste jiný výraz nebo objednací číslo.</div></sc-if>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULÁŘOVÉ PRVKY -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Formulářové prvky</h2>
+      <div style="background:#fff;border-radius:8px;padding:28px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+        <input placeholder="Hledat díly…" style="min-height:44px;width:240px;border:none;outline:none;background:#F2F4F7;border-radius:6px;padding:0 16px;font-size:15px;font-family:inherit;color:#15181C;">
+        <input value="S focus ringem" readOnly style="min-height:44px;width:200px;border:none;outline:none;background:#fff;box-shadow:0 0 0 2px #1E5AA8;border-radius:6px;padding:0 16px;font-size:15px;font-family:inherit;color:#15181C;">
+        <span style="display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#3A424C;cursor:pointer;"><span style="flex:none;width:21px;height:21px;border-radius:6px;background:#0E7F43;display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path></svg></span>Zaškrtnuto</span>
+        <span style="display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#3A424C;cursor:pointer;"><span style="flex:none;width:21px;height:21px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1.5px #C4CAD2;"></span>Nezaškrtnuto</span>
+        <span style="display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;min-width:190px;font-size:15px;font-weight:600;color:#15181C;background:#F2F4F7;border-radius:6px;cursor:pointer;padding:0 16px;">Nejoblíbenější <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5189CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+      </div>
+    </div>
+
+    <!-- BADGE & CHIPS -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Badge &amp; chips</h2>
+      <div style="background:#fff;border-radius:8px;padding:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <span style="display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:#fff;background:#C5232B;border-radius:6px;padding:5px 10px;">−20 %</span>
+        <span style="display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:#fff;background:#1E5AA8;border-radius:6px;padding:5px 10px;">Novinka</span>
+        <span style="display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:#0B6937;background:#E9F8EF;border-radius:6px;padding:5px 10px;">Doprava zdarma</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#fff;background:#1E5AA8;border-radius:999px;padding:9px 16px;cursor:pointer;">Nájezdové brzdy <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></span>
+        <span style="display:inline-flex;align-items:center;font-size:14px;font-weight:600;color:#3A424C;background:#fff;box-shadow:inset 0 0 0 1.5px #E0E4E9;border-radius:999px;padding:9px 16px;cursor:pointer;" class="hvx3">KNOTT <span style="color:#8A919C;margin-left:6px;">(486)</span></span>
+      </div>
+    </div>
+
+    <!-- SKLADOVOST -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Skladovost</h2>
+      <div style="background:#fff;border-radius:8px;padding:28px;display:flex;gap:32px;flex-wrap:wrap;align-items:center;">
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#0B6937;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.8 10A10 10 0 1 1 17 3.34"></path><path d="m9 11 3 3L22 4"></path></svg>Skladem &gt; 15 ks</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#C5232B;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>Není skladem</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#8A919C;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>Na dotaz</span>
+      </div>
+    </div>
+
+    <!-- STATUS OTEVÍRACÍ DOBY / LED -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <h2 style="margin:0 0 4px;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Status otevírací doby &amp; LED indikátor</h2>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#5A626C;max-width:760px;">Pulzující LED tečka signalizuje aktuální stav. Zelená = otevřeno, červená = zavřeno. Animace jemně pulzuje kruhovým stínem.</p>
+      </div>
+      <div style="background:#fff;border-radius:8px;padding:28px;display:flex;gap:40px;flex-wrap:wrap;align-items:center;">
+        <span style="display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:#0B6937;"><span class="vapp-led" style="--led:rgba(34,197,94,.55);width:11px;height:11px;background:#22C55E;flex:none;"></span>Po–Pá 8–16 · právě otevřeno</span>
+        <span style="display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:#C5232B;"><span class="vapp-led" style="--led:rgba(197,35,43,.5);width:11px;height:11px;background:#C5232B;flex:none;"></span>Zavřeno · otevíráme v Po 8:00</span>
+      </div>
+      <div style="background:#142F56;border-radius:8px;padding:20px 24px;display:flex;gap:40px;flex-wrap:wrap;align-items:center;">
+        <span style="display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#fff;"><span class="vapp-led" style="--led:rgba(34,197,94,.55);width:11px;height:11px;background:#22C55E;flex:none;"></span>Na tmavém podkladu (topbar / patička)</span>
+      </div>
+    </div>
+
+    <!-- PORADENSKÝ BLOK -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Poradenský blok</h2>
+      <div style="display:flex;align-items:center;gap:16px;background:#EFF4FB;border-radius:8px;padding:16px;flex-wrap:wrap;">
+        <div style="flex:none;width:44px;height:44px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#1E5AA8;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+        <div style="flex:1;min-width:200px;">
+          <div style="font-size:16px;font-weight:700;color:#142F56;">Nevíte, který díl je ten správný?</div>
+          <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#5A626C;margin-top:2px;"><span class="vapp-led" style="--led:rgba(34,197,94,.55);width:9px;height:9px;background:#22C55E;flex:none;"></span>Zkušení obchodníci poradí po telefonu i e-mailu · Po–Pá 8–16</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:14px;font-weight:700;color:#fff;background:#1E5AA8;border-radius:8px;padding:0 18px;cursor:pointer;" class="hvx1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>323 605 314</span>
+          <span style="display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:700;color:#1E5AA8;background:#fff;border-radius:8px;padding:0 18px;cursor:pointer;" class="hvx4">Napsat e-mail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- VÝPIS KATEGORIÍ -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Výpis kategorií</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;">
+        <sc-for list="{{ categories }}" as="k" hint-placeholder-count="6">
+          <div style="background:#fff;border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;height:100%;cursor:pointer;transition:box-shadow .15s;" class="hvx5">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="flex:none;width:44px;height:44px;border-radius:8px;background:#EFF4FB;display:flex;align-items:center;justify-content:center;color:#1E5AA8;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle></svg></span>
+              <span style="flex:1;min-width:0;">
+                <span style="display:block;font-size:16px;font-weight:700;color:#15181C;line-height:1.3;">{{ k.name }}</span>
+                <span style="display:block;font-size:13px;color:#8A919C;margin-top:1px;">{{ k.count }} produktů</span>
+              </span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;">
+              <sc-for list="{{ k.subs }}" as="sub" hint-placeholder-count="4">
+                <span style="font-size:14px;font-weight:600;color:#3A424C;cursor:pointer;" class="hvx6">{{ sub }}</span>
+              </sc-for>
+            </div>
+            <span style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;align-self:flex-start;min-height:44px;padding:0 18px;font-size:14px;font-weight:700;color:#1E5AA8;background:#EFF4FB;border-radius:8px;cursor:pointer;" class="hvx4">Zobrazit vše<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- MENU + BREADCRUMB -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Hlavní menu &amp; breadcrumb</h2>
+      <div style="background:#fff;border-radius:8px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:8px 24px;border-bottom:1px solid #F2F4F7;">
+          <span style="display:flex;align-items:center;font-size:18px;font-weight:700;color:#3A424C;padding:16px 2px;border-bottom:3px solid transparent;cursor:pointer;" class="h-tab">Přívěsy</span>
+          <span style="display:flex;align-items:center;font-size:18px;font-weight:700;color:#1E5AA8;padding:16px 2px;border-bottom:3px solid #1E5AA8;cursor:pointer;">Náhradní díly</span>
+          <span style="display:flex;align-items:center;font-size:18px;font-weight:700;color:#3A424C;padding:16px 2px;border-bottom:3px solid transparent;cursor:pointer;" class="h-tab">Příslušenství</span>
+          <span style="display:flex;align-items:center;font-size:18px;font-weight:700;color:#3A424C;padding:16px 2px;border-bottom:3px solid transparent;cursor:pointer;" class="h-tab">Servis</span>
+          <span style="display:flex;align-items:center;font-size:18px;font-weight:700;color:#3A424C;padding:16px 2px;border-bottom:3px solid transparent;cursor:pointer;" class="h-tab">Půjčovna</span>
+          <div style="margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;font-size:15px;font-weight:700;color:#1E5AA8;background:#EFF4FB;border-radius:8px;cursor:pointer;" class="hvx4">Podpora</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;font-size:15px;font-weight:700;color:#fff;background:#C5232B;border-radius:8px;cursor:pointer;" class="hvx7">Akce a slevy</span>
+          </div>
+        </div>
+        <div style="padding:16px 24px;font-size:13px;color:#8A919C;display:flex;align-items:center;gap:7px;">Úvod <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B4CEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg> Náhradní díly <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B4CEEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg> <span style="font-weight:700;color:#173C70;">Nápravy a brzdy</span></div>
+      </div>
+    </div>
+
+    <!-- PATIČKA -->
+    <div style="width:100%;max-width:1560px;align-self:center;display:flex;flex-direction:column;gap:16px;">
+      <h2 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em;">Patička <span style="font-size:14px;font-weight:600;color:#8A919C;">— max. šíře 1560 px</span></h2>
+      <div style="background:#142F56;color:#fff;border-radius:8px;padding:40px 36px;display:flex;flex-direction:column;gap:32px;">
+        <div style="display:flex;gap:36px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:300px;order:1;display:flex;flex-direction:column;gap:28px;">
+            <div style="display:flex;gap:36px;flex-wrap:wrap;">
+              <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="4">
+                <div style="display:flex;flex-direction:column;gap:14px;min-width:140px;">
+                  <span style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7FA6D6;">{{ col.title }}</span>
+                  <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="4">
+                    <span style="font-size:15px;color:#B4CEEC;cursor:pointer;" class="hvx8">{{ l }}</span>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,.10);"></div>
+            <div style="display:flex;gap:56px;flex-wrap:wrap;">
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <span style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7FA6D6;">Platba</span>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                  <sc-for list="{{ payMethods }}" as="m" hint-placeholder-count="4">
+                    <span style="display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;font-size:13px;font-weight:600;color:#B4CEEC;border:1px dashed rgba(180,206,236,.45);border-radius:8px;">{{ m }}</span>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <span style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7FA6D6;">Doprava</span>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                  <sc-for list="{{ shipMethods }}" as="m" hint-placeholder-count="3">
+                    <span style="display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;font-size:13px;font-weight:600;color:#B4CEEC;border:1px dashed rgba(180,206,236,.45);border-radius:8px;">{{ m }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="order:-1;flex:1 1 260px;display:flex;flex-direction:column;gap:12px;min-width:min(260px,100%);background:rgba(255,255,255,.06);border-radius:8px;padding:24px;">
+            <span style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7FA6D6;">Kontakt</span>
+            <span style="font-size:15px;font-weight:700;color:#fff;">VAPP s.r.o.</span>
+            <span style="font-size:15px;color:#B4CEEC;line-height:1.5;">Popovičky 50, 251 01 Říčany</span>
+            <span style="font-size:15px;color:#B4CEEC;line-height:1.5;">Pobočka: Mladá Boleslav — Židněves</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#fff;text-decoration:underline;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>323 605 314</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#fff;text-decoration:underline;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>obchod@vapp.cz</span>
+            <span style="display:inline-flex;align-items:center;gap:9px;font-size:15px;color:#B4CEEC;"><span class="vapp-led" style="--led:rgba(34,197,94,.55);width:9px;height:9px;background:#22C55E;flex:none;"></span>Po–Pá 8–16 · právě otevřeno</span>
+            <div style="height:1px;background:rgba(255,255,255,.12);margin:4px 0;"></div>
+            <span style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7FA6D6;">Všechny kontakty</span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;font-size:15px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border-radius:8px;cursor:pointer;line-height:1.3;text-align:center;" class="hvx9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Obchod, servis, půjčovna…</span>
+            <span style="font-size:13px;color:#6E88AE;margin-top:2px;">IČO 12345678 · DIČ CZ12345678</span>
+            <div style="height:1px;background:rgba(255,255,255,.12);margin:4px 0;"></div>
+            <span style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7FA6D6;">Sledujte nás</span>
+            <div style="display:flex;gap:12px;">
+              <span title="Facebook" style="width:40px;height:40px;border-radius:999px;border:1px solid rgba(180,206,236,.45);display:flex;align-items:center;justify-content:center;color:#B4CEEC;cursor:pointer;" class="hvx10"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
+              <span title="Instagram" style="width:40px;height:40px;border-radius:999px;border:1px solid rgba(180,206,236,.45);display:flex;align-items:center;justify-content:center;color:#B4CEEC;cursor:pointer;" class="hvx10"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></span>
+              <span title="YouTube" style="width:40px;height:40px;border-radius:999px;border:1px solid rgba(180,206,236,.45);display:flex;align-items:center;justify-content:center;color:#B4CEEC;cursor:pointer;" class="hvx10"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 6.9a2.8 2.8 0 0 0-1.95-2C18.8 4.5 12 4.5 12 4.5s-6.8 0-8.55.4a2.8 2.8 0 0 0-1.95 2A29 29 0 0 0 1.5 12a29 29 0 0 0 .4 5.1 2.8 2.8 0 0 0 1.95 2c1.75.4 8.55.4 8.55.4s6.8 0 8.55-.4a2.8 2.8 0 0 0 1.95-2 29 29 0 0 0 .4-5.1 29 29 0 0 0-.4-5.1z"></path><path d="M10 15.5v-7l6 3.5z"></path></svg></span>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,.10);"></div>
+
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <span style="font-size:14px;color:#8FA6C6;">© 2026 VAPP s.r.o. · <span style="cursor:pointer;">Ochrana osobních údajů</span> · <span style="text-decoration:underline;cursor:pointer;">Nastavení cookies</span></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:1600}}">
+class Component extends DCLogic {
+  state = { q:'', focus:true };
+
+  SEARCH = [
+    { name:'Nápravy a brzdy', meta:'Kategorie · 612 produktů', cat:true, kw:'brzda brzdy naprava napravy naprav' },
+    { name:'Kola a pneumatiky', meta:'Kategorie · 296 produktů', cat:true, kw:'kolo kola pneu pneumatika disk' },
+    { name:'Elektro a osvětlení', meta:'Kategorie · 474 produktů', cat:true, kw:'led elektro svetlo osvetleni zarovka kabel' },
+    { name:'Nájezdová brzda KNOTT KF13', meta:'Obj. č. 901301 · Skladem', kw:'brzda knott najezdova' },
+    { name:'Brzdové čelisti KNOTT 200×50', meta:'Obj. č. 302005 · Skladem', kw:'brzda celisti knott' },
+    { name:'Opěrné kolečko ⌀48 mm', meta:'Obj. č. 404815 · Skladem', kw:'kolo kolecko operne' },
+    { name:'Pneumatika 165 R13 C Kenda', meta:'Obj. č. 401653 · Skladem', kw:'pneu pneumatika kolo kenda' },
+    { name:'Svítilna Fristom FT-001 B LED', meta:'Obj. č. 501224 · Skladem', kw:'led svetlo svitilna fristom' },
+    { name:'Žárovka P21/5W 12 V BAY15d', meta:'Obj. č. 502155 · Skladem', kw:'led zarovka svetlo' },
+  ];
+
+  norm(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+
+  renderVals(){
+    const noop = ()=>{};
+    const s = this.state;
+    const q = s.q;
+    const nq = this.norm(q.trim());
+    let matches = nq ? this.SEARCH.filter(it=> this.norm(it.name).indexOf(nq)>=0 || it.kw.indexOf(nq)>=0 ) : this.SEARCH.slice(0,4);
+    const thumbCat = 'flex:none;width:40px;height:40px;border-radius:8px;background:#EFF4FB;';
+    const thumbProd = 'flex:none;width:40px;height:40px;border-radius:8px;background:repeating-linear-gradient(45deg,#EEF1F4,#EEF1F4 7px,#E6EAEE 7px,#E6EAEE 14px);';
+    const suggestions = matches.map(it=>({ name:it.name, meta:it.meta, thumb: it.cat?thumbCat:thumbProd, onPick:()=>this.setState({ q:it.name, focus:false }) }));
+    const search = {
+      q, hasQ: !!q,
+      searchRing: s.focus ? 'inset 0 0 0 2px #1E5AA8' : 'inset 0 0 0 0 transparent',
+      onSearch:(e)=>this.setState({ q:e.target.value }),
+      onFocus:()=>this.setState({ focus:true }),
+      onBlur:()=>this.setState({ focus:false }),
+      clearSearch:()=>this.setState({ q:'' }),
+      showSuggest: s.focus,
+      suggestHeading: nq ? 'Výsledky' : 'Populární dotazy',
+      suggestions,
+      noResults: nq && matches.length===0,
+    };
+
+    const box = (on)=>'flex:none;width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;border:1.5px solid '+(on?'#1E5AA8':'#C4CAD2')+';background:'+(on?'#1E5AA8':'#fff')+';';
+    const base = { starsOn:'★★★★', starsOff:'★', reviews:23, availStyle:'display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#0B6937;', availIn:true, availOut:false, avail:'Skladem > 15 ks', qty:1, cmp:false, cmpBox:box(false), onMinus:noop, onPlus:noop, onEnter:noop, onLeave:noop, onCmp:noop, dot1:'display:none;', dot2:'display:none;', noImg:false, phStyle:'', imgLabel:'' };
+    const withImg = (f)=>({ img:f, imgBgStyle:'aspect-ratio:4/3;background:#fff url("./'+f+'") center/contain no-repeat;background-origin:content-box;padding:18px 12px;' });
+    const badge = (text,bg)=>({ badge:text, badgeStyle:'position:absolute;top:8px;left:8px;font-size:13px;font-weight:700;border-radius:6px;padding:4px 9px;color:'+(bg==='#E9F8EF'?'#0B6937':'#fff')+';background:'+bg+';' });
+
+    const cards = [
+      { ...base, ...withImg('uploads/kolecko-operne-dtr-prum-48-150-kg.jpg'), name:'Opěrné kolečko ⌀48 mm, nosnost 150 kg', priceNet:'397 Kč', price:'480 Kč', objNum:'404815', badge:'', badgeStyle:'' },
+      { ...base, ...withImg('uploads/celisti-brzdove-knott-200x50-mala-sada-na-2-kola.jpg'), ...badge('−15 %','#C5232B'), name:'Brzdové čelisti KNOTT 200×50, sada na 2 kola', priceNet:'1 041 Kč', price:'1 260 Kč', objNum:'302005' },
+      { ...base, ...withImg('uploads/pneu-165-r13-c-96n-710-kg-kenda-m-s.jpg'), ...badge('Doprava zdarma','#E9F8EF'), name:'Pneumatika 165 R13 C 96N, 710 kg Kenda M+S', priceNet:'1 190 Kč', price:'1 440 Kč', objNum:'401653' },
+      { ...base, name:'Blatník plastový jednoosý 200 mm', priceNet:'479 Kč', price:'580 Kč', objNum:'603200', badge:'', badgeStyle:'', img:'', imgBgStyle:'', noImg:true, phStyle:'aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#9099A3;font-size:13px;font-weight:600;background:repeating-linear-gradient(45deg,#E9ECEF,#E9ECEF 11px,#E3E6EA 11px,#E3E6EA 22px);', imgLabel:'FOTO', availStyle:'display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#8A919C;', availIn:false, availOut:true, avail:'Na dotaz' },
+    ];
+
+    const btn = (label, mh, fs, pad)=>({
+      label,
+      leadStyle:'display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:'+mh+'px;padding:0 '+pad+'px;font-size:'+fs+'px;font-weight:700;color:#fff;background:#1E5AA8;border-radius:8px;cursor:pointer;',
+      trailStyle:'display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:'+mh+'px;padding:0 '+pad+'px;font-size:'+fs+'px;font-weight:700;color:#fff;background:#1E5AA8;border-radius:8px;cursor:pointer;',
+      iconStyle:'display:inline-flex;align-items:center;justify-content:center;width:'+mh+'px;height:'+mh+'px;color:#fff;background:#1E5AA8;border-radius:8px;cursor:pointer;',
+      ghostStyle:'display:inline-flex;align-items:center;justify-content:center;min-height:'+mh+'px;padding:0 '+pad+'px;font-size:'+fs+'px;font-weight:700;color:#1E5AA8;border-radius:8px;cursor:pointer;',
+      textStyle:'display:inline-flex;align-items:center;justify-content:center;min-height:'+mh+'px;padding:0 4px;font-size:'+fs+'px;font-weight:700;color:#1E5AA8;cursor:pointer;text-decoration:underline;',
+    });
+    const btnSizes = [ btn('Standard',36,14,14), btn('Medium',44,15,20), btn('Large',52,16,26) ];
+
+    const categories = [
+      { name:'Nápravy a brzdy', count:612, subs:['Nájezdové brzdy','Brzdové čelisti','Nápravy','Náboje kol'] },
+      { name:'Elektro a osvětlení', count:474, subs:['Zadní světla','Poziční světla','Kabeláž','Odrazky'] },
+      { name:'Kola a pneumatiky', count:296, subs:['Pneu s diskem','Disky','Pneumatiky','Šrouby a matice'] },
+      { name:'Spojovací zařízení', count:388, subs:['Kulové spojky','Oje a příčníky','Opěrná kolečka','Zabezpečení'] },
+      { name:'Blatníky a karoserie', count:412, subs:['Blatníky','Bočnice','Podlahy','Plachty'] },
+      { name:'Upínání a doplňky', count:236, subs:['Navijáky','Upínací pásy','Podpěrné nohy','Plynové vzpěry'] },
+    ];
+
+    const footerCols = [
+      { title:'Sortiment', links:['Přívěsy','Náhradní díly','Příslušenství','Akce a slevy'] },
+      { title:'Služby', links:['Servis','Půjčovna','Poradna'] },
+      { title:'O firmě', links:['O nás','Náš příběh','Reference','Kariéra'] },
+      { title:'Zákazník', links:['Obchodní podmínky','Doprava a platba','Reklamace','Podmínky půjčovny','Cookies'] },
+    ];
+    const payMethods = ['Apple Pay','Visa','Google Pay','Comgate'];
+    const shipMethods = ['PPL','DPD','Parcel Shop'];
+
+    return { ...search, cards, btnSizes, categories, footerCols, payMethods, shipMethods };
+  }
+}
+</script>
+</body>
+</html>
